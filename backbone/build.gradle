@@ -8,7 +8,7 @@ version = '1.1.2'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    buildToolsVersion '25.0.0'
 
     defaultConfig {
         minSdkVersion 16
@@ -65,7 +65,7 @@ ext {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:23.2.1'
     compile 'com.android.support:cardview-v7:23.2.1'
     compile 'com.android.support:preference-v14:23.2.1'
@@ -77,8 +77,6 @@ dependencies {
     compile 'com.jakewharton.rxbinding:rxbinding-support-v4:0.2.0'
     compile 'com.jakewharton.rxbinding:rxbinding-appcompat-v7:0.2.0'
     compile 'com.jakewharton.rxbinding:rxbinding-design:0.2.0'
-    compile 'com.github.PhilJay:MPAndroidChart:v2.2.3'
-
     compile 'com.scottyab:aes-crypto:0.0.3'
     compile 'co.touchlab.squeaky:squeaky-query:0.4.0.0'
     apt 'co.touchlab.squeaky:squeaky-processor:0.4.0.0'
@@ -86,6 +84,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     testCompile 'org.robolectric:robolectric:3.0'
     testCompile 'org.mockito:mockito-core:1.10.19'
+    compile project(':MPAndroidChart-Custom/MPChartLib')
 }
 
 group = publishedGroupId                               // Maven Group ID for the artifact

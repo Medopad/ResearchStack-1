@@ -1,0 +1,3 @@
+[submodule "MPAndroidChart-Custom"]
+	path = MPAndroidChart-Custom
+	url = https://github.com/ludwig-medopad/MPAndroidChart-Custom.git
