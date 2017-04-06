@@ -103,7 +103,7 @@ public class LineChartCard extends CardView {
 
         chart = (LineChart) findViewById(R.id.view_chart_line);
         chart.getLegend().setEnabled(false);
-        chart.setDescription("");
+//        chart.setDescription("");
         chart.setDrawBorders(false);
         chart.setDrawGridBackground(false);
         chart.setPinchZoom(false);
@@ -117,7 +117,7 @@ public class LineChartCard extends CardView {
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setDrawAxisLine(false);
         xAxis.setDrawGridLines(false);
-        xAxis.setLabelsToSkip(0);
+//        xAxis.setLabelsToSkip(0);
         xAxis.setXOffset(16);
         xAxis.setTextSize(chartXAxisTextSize);
         xAxis.setTextColor(chartXAxisTextColor);
@@ -128,7 +128,7 @@ public class LineChartCard extends CardView {
         yAxisLeft.setDrawGridLines(false);
         yAxisLeft.setDrawZeroLine(false);
         yAxisLeft.setDrawLabels(true);
-        yAxisLeft.setShowOnlyMinMax(true);
+//        yAxisLeft.setShowOnlyMinMax(true);
         yAxisLeft.setXOffset(16);
         yAxisLeft.setTextSize(chartYAxisTextSize);
         yAxisLeft.setTextColor(chartYAxisTextColor);

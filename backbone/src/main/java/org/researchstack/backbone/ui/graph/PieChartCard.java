@@ -84,7 +84,7 @@ public class PieChartCard extends CardView {
         chart.setHoleRadius(0);
         chart.setTransparentCircleRadius(0);
         chart.getLegend().setEnabled(false);
-        chart.setDescription("");
+//        chart.setDescription("");
         chart.setDrawCenterText(false);
 
         rowContainer = (LinearLayout) findViewById(R.id.view_chart_pie_rows);
@@ -107,22 +107,22 @@ public class PieChartCard extends CardView {
         rowContainer.removeAllViews();
         LayoutInflater inflater = LayoutInflater.from(getContext());
 
-        for (int i = 0, size = data.getXVals().size(); i < size; i++) {
-            String xVal = data.getXVals().get(i);
-            float entryValue = data.getDataSet().getEntryForIndex(i).getVal();
-
-            View row = inflater.inflate(R.layout.rsb_item_chart_pie, rowContainer, false);
-
-            TextView label = (TextView) row.findViewById(R.id.item_chart_pie_label);
-            label.setText(xVal);
-            label.setTextColor(data.getDataSet().getColor(i));
-
-            TextView value = (TextView) row.findViewById(R.id.item_chart_pie_value);
-            value.setText(getContext().getString(valueTextFormat, numberFormat.format(entryValue)));
-            value.setTextColor(data.getDataSet().getColor(i));
-
-            rowContainer.addView(row);
-        }
+//        for (int i = 0, size = data.getXVals().size(); i < size; i++) {
+//            String xVal = data.getXVals().get(i);
+//            float entryValue = data.getDataSet().getEntryForIndex(i).getValue();
+//
+//            View row = inflater.inflate(R.layout.rsb_item_chart_pie, rowContainer, false);
+//
+//            TextView label = (TextView) row.findViewById(R.id.item_chart_pie_label);
+//            label.setText(xVal);
+//            label.setTextColor(data.getDataSet().getColor(i));
+//
+//            TextView value = (TextView) row.findViewById(R.id.item_chart_pie_value);
+//            value.setText(getContext().getString(valueTextFormat, numberFormat.format(entryValue)));
+//            value.setTextColor(data.getDataSet().getColor(i));
+//
+//            rowContainer.addView(row);
+//        }
     }
 
     public PieChart getChart() {

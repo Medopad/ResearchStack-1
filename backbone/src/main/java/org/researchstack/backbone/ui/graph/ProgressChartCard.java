@@ -119,7 +119,7 @@ public class ProgressChartCard extends CardView {
         chart.setHoleColor(Color.TRANSPARENT);
         chart.setHoleRadius(95f);
         chart.getLegend().setEnabled(false);
-        chart.setDescription("");
+//        chart.setDescription("");
         chart.setCenterTextColor(centerTextColor);
         chart.setCenterTextSize(centerTextSize);
         chart.setCenterTextTypeface(Typeface.create(centerTextTypeface, Typeface.NORMAL));
@@ -153,7 +153,7 @@ public class ProgressChartCard extends CardView {
             PieData data = dataSet.get(i);
             TabLayout.Tab newTab = tabLayout.newTab();
             newTab.setText(data.getDataSet().getLabel());
-            newTab.setTag(data.getDataSet().getEntryForIndex(0).getVal());
+            newTab.setTag(data.getDataSet().getEntryForIndex(0).getValue());
             tabLayout.addTab(newTab, 0);
 
             if (i == size - 1) {
@@ -171,8 +171,8 @@ public class ProgressChartCard extends CardView {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 PieData data = dataSet.get(tab.getPosition());
-                float complete = data.getDataSet().getEntryForIndex(0).getVal();
-                float incomplete = data.getDataSet().getEntryForIndex(1).getVal();
+                float complete = data.getDataSet().getEntryForIndex(0).getValue();
+                float incomplete = data.getDataSet().getEntryForIndex(1).getValue();
                 chart.setData(data);
                 chart.setCenterText(String.format(centerTextFormat,
                         numberFormat.format(complete),

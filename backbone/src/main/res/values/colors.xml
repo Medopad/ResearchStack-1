@@ -12,9 +12,10 @@
     <color name="rsb_warm_gray_20">#33757575</color>
     <color name="rsb_submit_bar_gray">#EEEEEE</color>
     <color name="rsb_submit_bar_negative">#979797</color>
-    <color name="rsb_list_divider">#e5e5e5</color>
+    <color name="rsb_list_divider">#bdbdbd</color>
     <color name="rsb_error">#ffff5722</color>
 
     <color name="rsb_tab_indicator">#2196f3</color>
     <color name="rsb_tab_text_selected">#662196f3</color>
+    <color name="rsb_material_grey_600">#757575</color>
 </resources>

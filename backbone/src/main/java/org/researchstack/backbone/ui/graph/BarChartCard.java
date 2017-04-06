@@ -96,12 +96,12 @@ public class BarChartCard extends CardView {
 
         chart = (BarChart) findViewById(R.id.view_chart_bar);
         chart.getLegend().setEnabled(false);
-        chart.setDescription("");
+//        chart.setDescription("");
         chart.setDrawBorders(false);
         chart.setDrawValueAboveBar(false);
         chart.setDrawGridBackground(false);
         chart.setDrawBarShadow(false);
-        chart.setDrawHighlightArrow(false);
+//        chart.setDrawHighlightArrow(false);
         chart.setPinchZoom(false);
         chart.setExtraLeftOffset(0);
         chart.setExtraRightOffset(0);
@@ -115,7 +115,7 @@ public class BarChartCard extends CardView {
         xAxis.setDrawAxisLine(false);
         xAxis.setYOffset(16);
         xAxis.setDrawGridLines(false);
-        xAxis.setLabelsToSkip(0);
+//        xAxis.setLabelsToSkip(0);
         xAxis.setTextSize(chartXAxisTextSize);
         xAxis.setTextColor(chartXAxisTextColor);
         xAxis.setTypeface(Typeface.create(chartXAxisTextTypeface, Typeface.NORMAL));
