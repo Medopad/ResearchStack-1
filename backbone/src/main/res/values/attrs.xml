@@ -34,8 +34,10 @@
         <attr name="android:background" />
         <attr name="positiveActionTitle" format="string" />
         <attr name="negativeActionTitle" format="string" />
+        <attr name="cancelActionTitle" format="string" />
         <attr name="positiveActionColor" format="color" />
         <attr name="negativeActionColor" format="color" />
+        <attr name="cancelActionColor" format="color" />
     </declare-styleable>
 
     <declare-styleable name="SignatureView">

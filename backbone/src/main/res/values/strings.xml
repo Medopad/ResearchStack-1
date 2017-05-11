@@ -97,6 +97,9 @@
     <string name="rsb_quiz_evaluation_retake">Retake Quiz</string>
     <string name="rsb_quiz_evaluation_great_job">Great Job!</string>
 
+    <!-- Survey -->
+    <string name="rsb_survey_cancel_survey">Cancel Survey?</string>
+
     <!-- Other -->
     <string name="rsb_submit">Submit</string>
     <string name="rsb_exit">Exit</string>

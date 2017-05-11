@@ -41,6 +41,7 @@ public class Step implements Serializable {
     private boolean showsProgress;
     private boolean allowsBackNavigation;
     private boolean useSurveyMode;
+    private boolean lastStep;
 
     /**
      * Returns a new step initialized with the specified identifier.
@@ -190,5 +191,13 @@ public class Step implements Serializable {
      */
     public void setStepLayoutClass(Class stepLayoutClass) {
         this.stepLayoutClass = stepLayoutClass;
+    }
+
+    public boolean isLastStep(){
+        return lastStep;
+    }
+
+    public void setLastStep(boolean lastStep){
+        this.lastStep = lastStep;
     }
 }

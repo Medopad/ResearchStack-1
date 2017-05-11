@@ -1,10 +1,12 @@
 package org.researchstack.backbone.ui.step.layout;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
+import android.support.v7.app.AlertDialog;
 import android.text.Html;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -117,6 +119,9 @@ public class SurveyStepLayout extends FixedSubmitBarLayout implements StepLayout
         SubmitBar submitBar = (SubmitBar) findViewById(R.id.rsb_submit_bar);
         submitBar.setPositiveAction(v -> onNextClicked());
 
+        submitBar.setCancelTitle(R.string.rsb_cancel);
+        submitBar.setCancelAction(v -> onCancelClicked());
+
         if (questionStep != null) {
             if (!TextUtils.isEmpty(questionStep.getTitle())) {
                 title.setVisibility(View.VISIBLE);
@@ -144,6 +149,10 @@ public class SurveyStepLayout extends FixedSubmitBarLayout implements StepLayout
                 submitBar.setNegativeAction(v -> onSkipClicked());
             } else {
                 submitBar.getNegativeActionView().setVisibility(View.GONE);
+            }
+
+            if(questionStep.isLastStep()){
+                submitBar.setPositiveTitle(R.string.rsb_done);
             }
         }
     }
@@ -204,6 +213,17 @@ public class SurveyStepLayout extends FixedSubmitBarLayout implements StepLayout
                     getStep(),
                     stepBody.getStepResult(true));
         }
+    }
+
+    public void onCancelClicked(){
+        new AlertDialog.Builder(getContext())
+                .setTitle(R.string.rsb_survey_cancel_survey)
+                .setPositiveButton(R.string.rsb_yes, (dialogInterface, i) -> {
+                    callbacks.onCancelStep();
+                })
+                .setNegativeButton(R.string.rsb_cancel, null)
+                .show();
+
     }
 
     public Step getStep() {

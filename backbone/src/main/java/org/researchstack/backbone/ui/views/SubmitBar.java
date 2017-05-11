@@ -20,6 +20,7 @@ import rx.functions.Action1;
 public class SubmitBar extends LinearLayout {
     private TextView positiveView;
     private TextView negativeView;
+    private TextView cancelView;
 
     public SubmitBar(Context context) {
         this(context, null);
@@ -50,6 +51,11 @@ public class SubmitBar extends LinearLayout {
         negativeView.setText(a.getString(R.styleable.SubmitBar_negativeActionTitle));
         negativeView.setTextColor(a.getColor(R.styleable.SubmitBar_negativeActionColor,
                 ContextCompat.getColor(context, R.color.rsb_submit_bar_negative)));
+
+        cancelView = (TextView) findViewById(R.id.bar_submit_cancel);
+        cancelView.setText(a.getString(R.styleable.SubmitBar_cancelActionTitle));
+        cancelView.setTextColor(a.getColor(R.styleable.SubmitBar_cancelActionColor,
+                ContextCompat.getColor(context, R.color.rsb_submit_bar_cancel)));
 
         a.recycle();
     }
@@ -93,6 +99,27 @@ public class SubmitBar extends LinearLayout {
 
     public View getNegativeActionView() {
         return negativeView;
+    }
+
+    //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+    // Cancel Action Helper Methods
+    //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+    public void setCancelTitle(int title) {
+        setCancelTitle(getResources().getString(title));
+    }
+
+    public void setCancelTitle(String title) {
+        cancelView.setText(title);
+    }
+
+    public void setCancelAction(Action1 submit) {
+        RxView.clicks(this.cancelView).subscribe(submit);
+    }
+
+    public View getCancelActionView() {
+        return cancelView;
     }
 
 }
